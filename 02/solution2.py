@@ -3,7 +3,7 @@ import sys
 try:
     input_file = sys.argv[1]
 except IndexError:
-    print("Usage: python solution1.py <input_file>")
+    print("Usage: python solution2.py <input_file>")
     exit(1)
 
 h_pos = 0
