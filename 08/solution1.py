@@ -33,8 +33,8 @@ b    .  b    .  .    c  b    c  b    c
 9 = [a, b, c, d, f, g] = 6
 '''
 
-# List of 1, 4, 7 and 8 segments
-segments = [2, 4, 3, 7]
+# List of 1, 4, 7 and 8 counts
+counts = [2, 4, 3, 7]
 
 try:
     input_file = sys.argv[1]
@@ -56,6 +56,6 @@ with open(input_file, "r") as f:
 count = 0
 for line_input in input_list:
     output_list = line_input[1]
-    count += sum([len(string) in segments for string in output_list])
+    count += sum([len(string) in counts for string in output_list])
 
 print(f"'1, 4, 7, 8' appear {count} times")
