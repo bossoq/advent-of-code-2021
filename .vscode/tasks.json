@@ -20,7 +20,7 @@
     {
       "label": "Solve input",
       "type": "shell",
-      "command": "clear; echo ${file} ${fileDirname}/example.txt; python ${file} ${fileDirname}/input.txt",
+      "command": "clear; echo ${file} ${fileDirname}/input.txt; python ${file} ${fileDirname}/input.txt",
       "problemMatcher": [],
       "group": "build"
     },
