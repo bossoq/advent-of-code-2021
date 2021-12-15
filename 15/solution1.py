@@ -1,4 +1,3 @@
-from collections import deque
 import sys
 
 try:
@@ -32,20 +31,21 @@ def get_neighbors(pos):
 
 def main():
     dists = dict()
-    tovisit = deque()
-    tovisit.append(0 + 0j)
+    tovisit = set()
+    tovisit.add(0 + 0j)
     visited = set()
     dists[0 + 0j] = 0
 
     while len(tovisit) > 0:
-        node = tovisit.popleft()
+        node = sorted(tovisit, key=lambda x: dists[x])[0]
+        tovisit.remove(node)
         visited.add(node)
 
         for neighbor in get_neighbors(node):
             nextdist = dists[node] + input_dict[neighbor]
             if neighbor not in visited and dists.get(neighbor, 10000000) > nextdist:
                 dists[neighbor] = nextdist
-                tovisit.append(neighbor)
+                tovisit.add(neighbor)
     return dists[col_count - 1 + (row_count - 1) * 1j]
 
 
